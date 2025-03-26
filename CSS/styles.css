@@ -9,8 +9,11 @@ a:hover{
     color: gray
 }
 #logo {
-    padding: 1px;
+    padding-top: 1%;
+    padding-left: 2%;
+    height: 100%;
 }
+
 header{
     height: 10%;
     background-color: black;
@@ -21,8 +24,24 @@ header{
     margin: auto;
     height: 7.5%;
     border-radius: 3px;
+}
+@media screen and (max-width: 768px) {
+    #links {
+    height: 20%;
+    }
+}
+@media screen and (min-width: 1100px) {
+    #logo {
+    height: 120%;
+    }
+}
 
-} 
+@media screen and (min-width: 1300px) {
+    #logo {
+    height: 140%;
+    }
+}
+
 #contents {
     width: 70%;
     margin: auto;
