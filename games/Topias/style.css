@@ -43,17 +43,20 @@ header{
 }
 
 #contents {
-    width: 70%;
+    width: 80%;
     margin: auto;
     background-color: #340055;
     height: 80%;
     border-radius: 3px;
     color: white;
     min-height: 300px;
-    padding: 30px;
+    padding-top: 30px;
 
 }
 h1{
+    text-align: center;
+}
+p{
     text-align: center;
 }
 #bg {
@@ -77,5 +80,31 @@ img{
     height: 100px;
 }
 #aurinko{
-    height: 250px;
+    height: 200px;
 }
+.drop-zone {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    gap: 10px;
+}
+
+.drop-slot {
+    width: 100px;
+    height: 100px;
+    border: 2px dashed white;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+#planets{
+    justify-content: center;
+    display: flex;
+    gap: 30px;
+
+}
+#box{
+    margin-top: 50px;
+    margin-right: 10px;
+
+} 
