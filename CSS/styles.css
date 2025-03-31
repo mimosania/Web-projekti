@@ -94,10 +94,6 @@ h1 {
     #links {
         height: 24%;
     }
-
-    #contents-games {
-        height: 70%;
-    }
 }
 
 @media screen and (min-width: 1100px) {
