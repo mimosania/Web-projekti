@@ -82,5 +82,7 @@ article{
 }
 
 #alien{
-    
+    float: right;
+    height: 22em;
+    width: auto;
 }
