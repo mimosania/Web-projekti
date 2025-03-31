@@ -73,3 +73,10 @@ body {
 p, h1{
     font-family: 'Comic Neue', cursive;
 }
+
+article{
+    text-align: justify;
+    text-justify: inter-word;    
+
+
+}
