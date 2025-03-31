@@ -65,6 +65,16 @@ header{
     height: 80%;
     padding: 30px;
 }
+
+#contents a {
+    color: white; 
+    text-decoration: none;
+}
+
+#contents a:hover {
+    color: gray; 
+}
+
 #contents-games {
     width: 70%;
     margin: auto;
