@@ -94,7 +94,7 @@ img{
     width: 100px;
     height: 100px;
     border: 2px dashed white;
-    border-radius: 50%;
+    border-radius: 5px;
     box-sizing: border-box;
 }
 #planets{
