@@ -8,10 +8,24 @@ a {
 a:hover{
     color: gray
 }
+#gamelink {
+    text-decoration: none;
+    font-size: 1.5em;
+    color: white;
+    text-align: center;
+    font-family: 'Comic Neue', cursive;
+}
+#gamelink:hover{
+    color: gray
+}
 #logo {
     padding-top: 1%;
     padding-left: 2%;
     height: 100%;
+}
+
+#gamecover{
+    width: 80%
 }
 
 header{
@@ -25,7 +39,7 @@ header{
     height: 7.5%;
     border-radius: 3px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     #links {
     height: 24%;
     }
@@ -46,12 +60,19 @@ header{
     width: 70%;
     margin: auto;
     background-color: #340055;
-    height: 80%;
     border-radius: 3px;
     color: white;
-    min-height: 300px;
+    height: 80%;
     padding: 30px;
-
+}
+#contents-games {
+    width: 70%;
+    margin: auto;
+    background-color: #340055;
+    border-radius: 3px;
+    color: white;
+    height: 70%;
+    padding: 30px;
 }
 h1{
     text-align: center;
