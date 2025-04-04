@@ -34,7 +34,6 @@ a:hover {
 
 header {
     height: 10%;
-    background-color: black;
 }
 
 #links {
@@ -74,7 +73,6 @@ h1 {
 
 footer {
     height: 10%;
-    background-color: black;
     color: white;
     width: 70%;
     text-align: center;
@@ -82,7 +80,7 @@ footer {
 }
 
 body {
-    background-color: black;
+    background-image: url(../images/Tausta.png);
 }
 
 p,
