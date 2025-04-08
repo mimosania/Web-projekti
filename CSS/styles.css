@@ -5,19 +5,37 @@ a {
     text-align: center;
     font-family: 'Comic Neue', cursive;
 }
-a:hover{
+
+a:hover {
     color: gray
 }
+
+#gamelink {
+    text-decoration: none;
+    font-size: 1em;
+    color: white;
+    text-align: center;
+    font-family: 'Comic Neue', cursive;
+}
+
+#gamelink:hover {
+    color: gray
+}
+
 #logo {
     padding-top: 1%;
     padding-left: 2%;
     height: 100%;
 }
 
-header{
-    height: 10%;
-    background-color: black;
+#gamecover {
+    width: 80%
 }
+
+header {
+    height: 10%;
+}
+
 #links {
     background-color: #d089ff;
     width: 70%;
@@ -25,54 +43,51 @@ header{
     height: 7.5%;
     border-radius: 3px;
 }
-@media screen and (max-width: 768px) {
-    #links {
-    height: 24%;
-    }
-}
-@media screen and (min-width: 1100px) {
-    #logo {
-    height: 120%;
-    }
-}
-
-@media screen and (min-width: 1300px) {
-    #logo {
-    height: 140%;
-    }
-}
 
 #contents {
     width: 70%;
     margin: auto;
     background-color: #340055;
-    height: 80%;
     border-radius: 3px;
     color: white;
-    min-height: 300px;
+    height: 80%;
     padding: 30px;
-
 }
-h1{
+
+#contents a {
+    color: white;
+    text-decoration: none;
+}
+
+#contents a:hover {
+    color: gray;
+}
+
+h1 {
     text-align: center;
 }
+
 #bg {
     height: 100vh;
 }
-footer{
+
+footer {
     height: 10%;
-    background-color: black;
     color: white;
     width: 70%;
     text-align: center;
     margin: auto;
 }
+
 body {
-    background-color: black;
+    background-image: url(../images/Tausta.png);
 }
-p, h1{
+
+p,
+h1 {
     font-family: 'Comic Neue', cursive;
 }
+
 
 article{
     text-align: justify;
@@ -85,5 +100,24 @@ article{
     float: right;
     height: 22em;
     width: auto;
+}
+
+
+@media screen and (max-width: 767px) {
+    #links {
+        height: 24%;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    #logo {
+        height: 120%;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    #logo {
+        height: 140%;
+    }
 }
 
