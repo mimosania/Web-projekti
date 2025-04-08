@@ -88,6 +88,21 @@ h1 {
     font-family: 'Comic Neue', cursive;
 }
 
+
+article{
+    text-align: justify;
+    text-justify: inter-word;    
+
+
+}
+
+#alien{
+    float: right;
+    height: 22em;
+    width: auto;
+}
+
+
 @media screen and (max-width: 767px) {
     #links {
         height: 24%;
@@ -105,3 +120,4 @@ h1 {
         height: 140%;
     }
 }
+
