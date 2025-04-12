@@ -1,0 +1,27 @@
+img#questionImage {
+    display: block;
+    height: auto;
+    margin: 0 auto;
+    max-width: 20em;
+    width: 100%;
+}
+
+form#questionform label {
+    margin-left: 0.5em;
+}
+
+form#questionform input[type="submit"] {
+    margin: 1em 0;
+}
+
+.correct {
+    background-color: green;
+}
+
+.incorrect {
+    background-color: red;
+}
+
+.hidden {
+    display: none;
+}
