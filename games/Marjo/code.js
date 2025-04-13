@@ -1,7 +1,7 @@
-let questions = ['Aurinkoa kiertää:', 'Ainoa planeetta, jolla tiedetään varmuudella elävän kasveja ja eläimiä?', 'Suurinta osaa Maan pinnasta peittää', 'Aurinkoa kiertäviä planeettoja on yhteensä', 'Suurin planeetta on', 'Aurinkokuntamme pienin ja lähinnä aurinkoa oleva planeetta on', 'Kuinka monta vuorokautta Maan kiertoaika auringon ympäri on?', 'Kuinka monta kuuta Maalla on?'];
+let questions = ['1. Aurinkoa kiertää:', '2. Ainoa planeetta, jolla tiedetään varmuudella elävän kasveja ja eläimiä?', '3. Suurinta osaa Maan pinnasta peittää', '4. Aurinkoa kiertäviä planeettoja on yhteensä', '5. Suurin planeetta on', '6. Aurinkokuntamme pienin ja lähinnä aurinkoa oleva planeetta on', '7. Kuinka monta vuorokautta Maan kiertoaika auringon ympäri on?', '8. Kuinka monta kuuta Maalla on?'];
 let options = [['kivet', 'planeetat', 'tähdet'], ['Maa', 'Pluto', 'Venus'], ['ruoho', 'vesi','hiekka'], ['6', '7','8'], ['Jupiter', 'Merkurius', 'Mars'], ['Jupiter','Mars','Merkurius'],['365', '400', '325'],['2','1','3']]
 let answers = ['planeetat', 'Maa', 'Vesi', '8', 'Jupiter', 'Merkurius','365', '1'];
-let images = ['images/kiviplaneetat.jpg', 'images/maa.jpg'];
+let images = ['images/kiviplaneetat.jpg', 'images/planeetat.jpg', 'images/maa.jpg', 'images/planeetat2.jpg', 'images/jupiter.jpg', 'images/planeetatjaaurinko.jpg', 'images/planeetat2.jpg', 'images/aurinkojaplaneetat.jpg'];
 let index = 0;
 let points = 0;
 
@@ -40,7 +40,7 @@ function answer(event){
     document.querySelector('#result').textContent = 
         'Sinulla on nyt ' + points + '/' + questions.length + ' pistettä';
 
-    document.querySelector('#correctAnswer').textContent = 'Oikea vastaus on ' + answers[index];
+    document.querySelector('#correctAnswer').textContent = 'Oikea vastaus on: ' + answers[index];
 
     //Siirrytään seuraavaan kysymykseen, kasvatetaan indexiä yhdellä
     index++;
@@ -62,6 +62,7 @@ function nextQuestion(){
         document.querySelector('#result').textContent = 
             'Peli loppui ja sait yhteensä ' + points + '/' + questions.length + ' pistettä';
         form.classList.add('hidden');
+        document.querySelector('#questionImage').src = "./images/planeetat.jpg";
     }else{
         // Siirrytään seuraavaan kysymykseen, index on kasvanut yhdellä.
         questionElement.textContent = questions[index];
