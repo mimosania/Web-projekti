@@ -1,7 +1,7 @@
-const kortit = document.querySelectorAll('.kortit');
+const kortit = document.querySelectorAll('.kortti');
 
-function flipKortti() {
+function flipkortti() {
     this.classList.toggle('flip');
 }
 
-kortit.forEach(kortti => kortti.addEventListener('click', flipKortti));
+kortit.forEach(kortti => kortti.addEventListener('click', flipkortti));
