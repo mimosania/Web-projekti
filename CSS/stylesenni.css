@@ -1,3 +1,6 @@
+*{
+    box-sizing: border-box;
+}
 a {
     text-decoration: none;
     font-size: 1.5em;
@@ -81,6 +84,7 @@ footer {
 
 body {
     background-image: url(../images/Tausta.png);
+    height: 100vh;
 }
 
 p,
@@ -122,11 +126,17 @@ article{
 }
 
 .kortti{
-    width: 25%;
-    height: 33.333%;
+    width:calc(25% - 10px);
+    height:calc(33.333% - 10px);
     position: relative;
     margin: 5px;
+    transform: scale(1);
     
+}
+
+.kortti:active{
+    transform: scale(.97);
+    transition: transform .2s;
 }
 
 .muistipeli{
@@ -134,6 +144,7 @@ article{
     height: 640px;
     display: flex;
     flex-wrap: wrap;
+    margin: auto;
 }
 
 
