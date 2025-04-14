@@ -131,6 +131,8 @@ article{
     position: relative;
     margin: 5px;
     transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
     
 }
 
@@ -139,12 +141,17 @@ article{
     transition: transform .2s;
 }
 
+.kortti.flip{
+    transform: rotateY(180deg);
+}
+
 .muistipeli{
     width: 640px;
     height: 640px;
     display: flex;
     flex-wrap: wrap;
     margin: auto;
+    perspective: 1000px;
 }
 
 
@@ -154,5 +161,10 @@ article{
     width: 100%;
     height: 100%;
     padding: 20px;
+    takaosa-visibility: hidden;
 
+}
+
+.etuosa{
+    transform: rotateY(180deg);
 }

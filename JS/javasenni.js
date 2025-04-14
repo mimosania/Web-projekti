@@ -1,9 +1,7 @@
-const gridContainer = document.querySelector(".grid-container");
-let kortit = [];
-let kortti1, kortti2;
-let lockBoard = false;
-let pisteet = 0;
+const kortit = document.querySelectorAll('.kortit');
 
-document.querySelector(".pisteet").textContent = pisteet;
+function flipKortti() {
+    this.classList.toggle('flip');
+}
 
-fetch()
+kortit.forEach(kortti => kortti.addEventListener('click', flipKortti));
