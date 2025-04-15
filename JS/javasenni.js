@@ -52,8 +52,15 @@ function takaisin(){
 }
 
 function resetBoard(){
-[kaannetty, lockBoard] = [false, false];
-[eka, toka] = [ null, null];
+    [kaannetty, lockBoard] = [false, false];
+    [eka, toka] = [ null, null];
 }
+
+(function sekoitus(){
+    kortit.forEach(kortti=>{
+        let randomPos = Math.floor(Math.random()*12);
+        kortti.style.order = randomPos;
+    });
+})();
 
 kortit.forEach(kortti => kortti.addEventListener('click', flipkortti));
