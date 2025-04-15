@@ -146,8 +146,8 @@ article{
 }
 
 .muistipeli{
-    width: 640px;
-    height: 640px;
+    width: 600px;
+    height: 450px;
     display: flex;
     flex-wrap: wrap;
     margin: auto;

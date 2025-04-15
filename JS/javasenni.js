@@ -17,6 +17,15 @@ function flipkortti() {
         toka = this;
         
         pari();
+            if (!eka){
+                eka = this;
+                return;
+            }
+            toka = this
+            pisteet++;
+            document.querySelector(".pisteet").textContent = pisteet;
+            lockBoard = true;
+            pari();
 
 
     }
@@ -48,7 +57,7 @@ function takaisin(){
 
         lockBoard = false;
         resetBoard();
-        }, 1500);
+        }, 1000);
 }
 
 function resetBoard(){
@@ -63,4 +72,10 @@ function resetBoard(){
     });
 })();
 
+
+
 kortit.forEach(kortti => kortti.addEventListener('click', flipkortti));
+
+function restart(){
+    location.reload();
+}
