@@ -1,4 +1,4 @@
-const kortit = document.querySelectorAll('.kortti');
+const kortit = document.querySelectorAll(".kortti");
 
 function flipkortti() {
     this.classList.toggle('flip');
