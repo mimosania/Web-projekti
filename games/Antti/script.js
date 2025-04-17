@@ -1,4 +1,6 @@
 let n1, n2;
+let pisteet = 0;
+
 function Uusilasku(){
  n1 = Math.floor(Math.random() * 10);
  n2 = Math.floor(Math.random() * 10);
@@ -15,6 +17,8 @@ function tarkistaVastaus() {
 
     if (käyttäjänVastaus === oikeaVastaus) {
         document.getElementById("tulos").textContent = "jippii hurraa oikein";
+        pisteet++;
+        document.getElementById("pisteet").textContent = pisteet;
 
         setTimeout(() => {
             Uusilasku();
@@ -23,6 +27,7 @@ function tarkistaVastaus() {
         document.getElementById("tulos").textContent = "väärin :("
     }
 }
+
 
 
 Uusilasku();
