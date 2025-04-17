@@ -1,7 +1,11 @@
 let n1, n2;
 let pisteet = 0;
+let aika = 30;
+let ajastin;
+let pelikaynissa = true;
 
 function Uusilasku(){
+    if (!pelikaynissa) return;
  n1 = Math.floor(Math.random() * 10);
  n2 = Math.floor(Math.random() * 10);
 
@@ -12,6 +16,7 @@ document.getElementById("vastaus").value = "";
 document.getElementById("tulos").textContent = "";
 }
 function tarkistaVastaus() {
+    if (!pelikaynissa) return ;
     let käyttäjänVastaus = Number(document.getElementById("vastaus").value);
     let oikeaVastaus = n1 + n2;
 
@@ -22,12 +27,25 @@ function tarkistaVastaus() {
 
         setTimeout(() => {
             Uusilasku();
-        }, 1500);
+        }, 500);
     } else {
         document.getElementById("tulos").textContent = "väärin :("
+
     }
+}
+function kaynnistaajastin() {
+    ajastin = setInterval(() => {
+        aika --;
+        document.getElementById("aika").textContent = aika;
+
+        if (aika <= 0) {
+            clearInterval(ajastin);
+            pelikaynissa = false;
+            document.getElementById("tulos").textContent = "Peli ohi!";
+        }
+    }, 1000);
 }
 
 
-
 Uusilasku();
+kaynnistaajastin();
