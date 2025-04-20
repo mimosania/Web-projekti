@@ -5,16 +5,15 @@ a {
     text-align: center;
     font-family: 'Comic Neue', cursive;
 }
-a:hover{
-    color: gray
+a:hover {
+    color: gray;
 }
 #logo {
     padding-top: 1%;
     padding-left: 2%;
     height: 100%;
 }
-
-header{
+header {
     height: 10%;
     background-color: black;
 }
@@ -27,21 +26,19 @@ header{
 }
 @media screen and (max-width: 768px) {
     #links {
-    height: 24%;
+        height: 24%;
     }
 }
 @media screen and (min-width: 1100px) {
     #logo {
-    height: 120%;
+        height: 120%;
     }
 }
-
 @media screen and (min-width: 1300px) {
     #logo {
-    height: 140%;
+        height: 140%;
     }
 }
-
 #contents {
     width: 80%;
     margin: auto;
@@ -51,18 +48,15 @@ header{
     color: white;
     min-height: 300px;
     padding-top: 30px;
-
 }
-h1{
+h1, p {
     text-align: center;
-}
-p{
-    text-align: center;
+    font-family: 'Comic Neue', cursive;
 }
 #bg {
     height: 100vh;
 }
-footer{
+footer {
     height: 10%;
     background-color: black;
     color: white;
@@ -73,13 +67,10 @@ footer{
 body {
     background-color: black;
 }
-p, h1{
-    font-family: 'Comic Neue', cursive;
-}
-img{
+img {
     height: 100px;
 }
-#aurinko{
+#aurinko {
     height: 200px;
 }
 .drop-zone {
@@ -89,7 +80,6 @@ img{
     margin-top: 30px;
     gap: 10px;
 }
-
 .drop-slot {
     width: 100px;
     height: 100px;
@@ -97,14 +87,16 @@ img{
     border-radius: 5px;
     box-sizing: border-box;
 }
-#planets{
+#planets {
     justify-content: center;
     display: flex;
     gap: 30px;
-
 }
-#box{
+.box {
     margin-top: 50px;
     margin-right: 10px;
-
-} 
+}
+#buttons{
+    text-align: center;
+    margin-top: 30px;
+}
