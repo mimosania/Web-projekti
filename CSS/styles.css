@@ -90,6 +90,7 @@ body {
 article{
     text-align: justify;
     text-justify: inter-word;
+    font-size: 1.2em;
 }
 
 #alien{
