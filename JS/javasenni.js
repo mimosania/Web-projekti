@@ -32,6 +32,7 @@ function flipkortti() {
                 pisteet++;
                 document.querySelector(".pisteet").textContent = pisteet;
                 lockBoard = true;
+                sessionStorage.setItem('muistipeli', pisteet.toString());
 
         } else {
             takaisin();
