@@ -13,7 +13,7 @@ function aloitaPeli() {
     document.getElementById("tulos").textContent = "";
     Uusilasku();
     kaynnistaajastin();
-} // <-- TÄMÄ SULKEVA SULKU PUUTTUI
+}
 
 function Uusilasku(){
     if (!pelikaynissa) return;
