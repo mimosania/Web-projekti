@@ -87,8 +87,13 @@ footer {
 }
 
 body {
-    background-image: url(../images/Tausta.png);
-    background-size: cover;
+
+    background-image: url(../images/tausta1.png);
+}
+
+p,
+h1 {
+
     font-family: 'Comic Neue', cursive;
 }
 
