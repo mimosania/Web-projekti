@@ -3,7 +3,6 @@ a {
     font-size: 1.5em;
     color: black;
     text-align: center;
-    font-family: 'Comic Neue', cursive;
 }
 
 a:hover {
@@ -15,7 +14,6 @@ a:hover {
     font-size: 1em;
     color: white;
     text-align: center;
-    font-family: 'Comic Neue', cursive;
 }
 
 #gamelink:hover {
@@ -45,12 +43,14 @@ header {
 }
 
 #contents {
+    font-size: 1em;
     width: 70%;
     margin: auto;
     background-color: #340055;
     border-radius: 3px;
     color: white;
-    height: 80%;
+    height: auto;
+    min-height: 80%;
     padding: 30px;
 }
 
@@ -78,7 +78,8 @@ h1 {
 }
 
 footer {
-    height: 10%;
+    height: auto;
+    min-height: 10%;
     color: white;
     width: 70%;
     text-align: center;
@@ -87,12 +88,26 @@ footer {
 
 body {
     background-image: url(../images/Tausta.png);
-}
-
-p,
-h1 {
+    background-size: cover;
     font-family: 'Comic Neue', cursive;
 }
+
+
+article{
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: 1.2em;
+}
+
+#alien{
+    display: block;
+    height: auto;
+    margin-right: 0;
+    margin-left: auto;
+    max-width: 20em;
+    width: 100%;
+}
+
 
 
 article{
