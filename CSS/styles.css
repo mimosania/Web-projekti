@@ -109,20 +109,6 @@ article{
 }
 
 
-
-article{
-    text-align: justify;
-    text-justify: inter-word;    
-
-
-}
-
-#alien{
-    float: right;
-    height: 22em;
-    width: auto;
-}
-
 #gameinfo{
     width: 70%;
     margin: auto;
