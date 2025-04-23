@@ -3,6 +3,7 @@ const kortit = document.querySelectorAll(".kortti");
 let kaannetty = false;
 let lockBoard = false;
 let eka, toka;
+let pisteet = 0;
 
 function flipkortti() {
     if(lockBoard) return;
@@ -16,48 +17,51 @@ function flipkortti() {
         kaannetty = false;
         toka = this;
         
-        pari();
+        tarkistus();
             if (!eka){
                 eka = this;
                 return;
             }
-            toka = this
-            pisteet++;
-            document.querySelector(".pisteet").textContent = pisteet;
-            lockBoard = true;
-            pari();
 
 
     }
-    function pari(){
+    function tarkistus(){
         if (eka.dataset.framework === 
             toka.dataset.framework) {
                 poispaalta();
+                pisteet++;
+                document.querySelector(".pisteet").textContent = pisteet;
+                lockBoard = true;
 
         } else {
             takaisin();
 
         }
 
+
     }
 }
 
 function poispaalta(){
-    eka.removeEventListener("click", flipkortti);
-    toka.removeEventListener("click", flipkortti);
-    resetBoard();
+    if (eka != null){
+        eka.removeEventListener("click", flipkortti);
+        toka.removeEventListener("click", flipkortti);
+        resetBoard();
+    }
 
 }
 
 function takaisin(){
-    lockBoard = true;
-    setTimeout(()=> {
-        eka.classList.remove("flip");
-        toka.classList.remove("flip");
+    if (eka != null){
+     lockBoard = true;
+     setTimeout(()=> {
+         eka.classList.remove("flip");
+            toka.classList.remove("flip");
 
-        lockBoard = false;
-        resetBoard();
-        }, 1000);
+            lockBoard = false;
+            resetBoard();
+            }, 1000);
+    }
 }
 
 function resetBoard(){
