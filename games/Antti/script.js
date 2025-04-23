@@ -36,6 +36,7 @@ function tarkistaVastaus() {
         document.getElementById("tulos").textContent = "jippii hurraa oikein";
         pisteet++;
         document.getElementById("pisteet").textContent = pisteet;
+        sessionStorage.setItem('matikkapeli', pisteet.toString());
 
         setTimeout(() => {
             Uusilasku();
@@ -57,3 +58,5 @@ function kaynnistaajastin() {
         }
     }, 1000);
 }
+
+
