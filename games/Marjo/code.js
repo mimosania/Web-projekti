@@ -63,6 +63,7 @@ function nextQuestion(){
             'Peli loppui ja sait yhteensä ' + points + '/' + questions.length + ' pistettä';
         form.classList.add('hidden');
         document.querySelector('#questionImage').src = "./images/planeetat.jpg";
+        sessionStorage.setItem('Planeettavisailu', points)
     }else{
         // Siirrytään seuraavaan kysymykseen, index on kasvanut yhdellä.
         questionElement.textContent = questions[index];
@@ -83,3 +84,4 @@ function nextQuestion(){
     }
     
 } 
+
