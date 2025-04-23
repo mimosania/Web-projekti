@@ -1,0 +1,170 @@
+*{
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    font-size: 1.5em;
+    color: black;
+    text-align: center;
+    font-family: 'Comic Neue', cursive;
+}
+
+a:hover {
+    color: gray
+}
+
+#gamelink {
+    text-decoration: none;
+    font-size: 1em;
+    color: white;
+    text-align: center;
+    font-family: 'Comic Neue', cursive;
+}
+
+#gamelink:hover {
+    color: gray
+}
+
+#logo {
+    padding-top: 1%;
+    padding-left: 2%;
+    height: 100%;
+}
+
+#gamecover {
+    width: 80%
+}
+
+header {
+    height: 10%;
+}
+
+#links {
+    background-color: #d089ff;
+    width: 70%;
+    margin: auto;
+    height: 7.5%;
+    border-radius: 3px;
+}
+
+#contents {
+    width: 70%;
+    margin: auto;
+    background-color: #340055;
+    border-radius: 3px;
+    color: white;
+    height: 80%;
+    padding: 30px;
+}
+
+#contents a {
+    color: white;
+    text-decoration: none;
+}
+
+#contents a:hover {
+    color: gray;
+}
+
+h1 {
+    text-align: center;
+}
+
+#bg {
+    height: 100vh;
+}
+
+footer {
+    height: 10%;
+    color: white;
+    width: 70%;
+    text-align: center;
+    margin: auto;
+}
+
+body {
+    background-image: url(../images/Tausta.png);
+    height: 100vh;
+}
+
+p,
+h1 {
+    font-family: 'Comic Neue', cursive;
+}
+
+
+article{
+    text-align: justify;
+    text-justify: inter-word;    
+
+
+}
+
+#alien{
+    float: right;
+    height: 22em;
+    width: auto;
+}
+
+
+@media screen and (max-width: 767px) {
+    #links {
+        height: 24%;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    #logo {
+        height: 120%;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    #logo {
+        height: 140%;
+    }
+}
+
+.kortti{
+    width:calc(25% - 10px);
+    height:calc(33.333% - 10px);
+    position: relative;
+    margin: 5px;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+    
+}
+
+.kortti:active{
+    transform: scale(.97);
+    transition: transform .2s;
+}
+
+.kortti.flip{
+    transform: rotateY(180deg);
+}
+
+.muistipeli{
+    width: 600px;
+    height: 450px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    perspective: 1000px;
+}
+
+
+
+.takaosa, .etuosa{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    backface-visibility: hidden;
+
+}
+
+.etuosa{
+    transform: rotateY(180deg);
+}
