@@ -3,7 +3,7 @@ let draggedPlanet = null;
 // Make each planet draggable
 let planets = document.querySelectorAll('#planets img');
 planets.forEach(planet => {
-    planet.addEventListener('dragstart', function(event) {
+    planet.addEventListener('dragstart', event => {
         draggedPlanet = event.target;
     });
 });
@@ -11,13 +11,13 @@ planets.forEach(planet => {
 // Handle drop zones
 let dropSlots = document.querySelectorAll('.drop-slot');
 dropSlots.forEach(slot => {
-    slot.addEventListener('dragover', function(event) {
+    slot.addEventListener('dragover', event => {
         event.preventDefault(); // Allow drop
     });
 
-    slot.addEventListener('drop', function(event) {
-        if (draggedPlanet !== null) {
-            // Return existing planet in slot (if any) back to container
+    slot.addEventListener('drop', function () {
+        if (draggedPlanet) {
+            // Move existing planet in slot back to container
             if (this.firstChild) {
                 document.getElementById('planets').appendChild(this.firstChild);
             }
@@ -30,7 +30,7 @@ dropSlots.forEach(slot => {
 });
 
 // Reset button
-document.getElementById('resetBtn').addEventListener('click', function() {
+document.getElementById('resetBtn').addEventListener('click', () => {
     let container = document.getElementById('planets');
 
     dropSlots.forEach(slot => {
@@ -44,7 +44,7 @@ document.getElementById('resetBtn').addEventListener('click', function() {
 });
 
 // Check button
-document.getElementById('checkBtn').addEventListener('click', function() {
+document.getElementById('checkBtn').addEventListener('click', () => {
     let score = 0;
 
     dropSlots.forEach(slot => {
@@ -52,11 +52,13 @@ document.getElementById('checkBtn').addEventListener('click', function() {
 
         if (planet === slot.dataset.planet) {
             slot.style.borderColor = 'limegreen';
-            score += 1;
+            score++;
         } else {
             slot.style.borderColor = 'red';
         }
     });
 
-    document.getElementById('score').textContent = `Pisteet: ${score} / 8`;
+    let pisteet = `Pisteet: ${score} / 8`;
+    document.getElementById('score').textContent = pisteet;
+    sessionStorage.setItem('planeettapeli', score);
 });
