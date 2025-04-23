@@ -54,6 +54,12 @@ header {
     padding: 30px;
 }
 
+#contents_palapeli {
+    background-color: #340055;
+    color: white;
+    margin: auto;
+}
+
 #contents a {
     color: white;
     text-decoration: none;
@@ -103,9 +109,38 @@ article{
 }
 
 
+
+article{
+    text-align: justify;
+    text-justify: inter-word;    
+
+
+}
+
+#alien{
+    float: right;
+    height: 22em;
+    width: auto;
+}
+
+#gameinfo{
+    width: 70%;
+    margin: auto;
+    background-color: #340055;
+    color: white;
+}
+
+
 @media screen and (max-width: 767px) {
     #links {
         height: 24%;
+    }
+}
+@media screen and (min-width: 1024px) {
+
+    #contents_palapeli{
+        width: 655px;
+        height: 100%;
     }
 }
 
@@ -114,7 +149,6 @@ article{
         height: 120%;
     }
 }
-
 @media screen and (min-width: 1300px) {
     #logo {
         height: 140%;
