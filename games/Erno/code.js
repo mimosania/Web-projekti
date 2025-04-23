@@ -77,6 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             points = pointsEarned;
             winMessage.textContent = `Onneksi olkoon! Ratkaisit palapelin ajassa ${seconds} sekuntia. Pisteet: ${points}`;
+            sessionStorage.setItem('palapeli', points)
             started = false;
         }
     }
@@ -139,5 +140,9 @@ document.addEventListener("DOMContentLoaded", () => {
     shuffleBtn.addEventListener("click", () => shufflePuzzle(100));
 
     updateTileListeners();
+
+ 
+
 });
+
 
