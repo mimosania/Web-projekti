@@ -123,7 +123,9 @@ function update() {
     for (let asteroid of asteroids) {
         if (distBetweenPoints(ship.x, ship.y, asteroid.x, asteroid.y) < ship.radius + asteroid.radius) {
             gameOver = true;
+            localStorage.setItem("finalScore", score);
             document.getElementById("game-over-screen").classList.remove("d-none");
+            break;
         }
     }
 
