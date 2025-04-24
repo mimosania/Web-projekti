@@ -20,4 +20,4 @@ muisti.innerHTML = muistipeli;
 
 const planeetat = document.querySelector('#planeetat');
 let planeettapeli = Number(sessionStorage.getItem('planeettapeli'));
-planeetat.innerHTML = planeettapeli;
+planeetat.innerHTML = planeettapeli + "/8";
