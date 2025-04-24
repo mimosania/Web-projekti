@@ -18,12 +18,28 @@ form#questionform input[type="submit"] {
     margin: 1em 0;
 }
 
+#questionform {
+    border: 1px solid plum;
+    padding: 15px;
+    position: relative;
+}
+
+#answer {
+    position: absolute;
+    bottom: -140px;
+    
+}
+
+form {
+    font-size: 1.5em;
+}
+
 .correct {
-    background-color: green;
+    background-color: rgb(77, 137, 77);
 }
 
 .incorrect {
-    background-color: red;
+    background-color: rgb(234, 144, 144);
 }
 
 .hidden {

@@ -14,74 +14,77 @@ let questionElement = document.getElementById('question');
 nextQuestion();
 
 
-//Kysymykseen vastaaminen
+// Kysymykseen vastaaminen. 
+// Estetään lähetä-painikkeen normaali toiminto, eli lomakkeen lähettäminen. 
+// Asetetaan vastaa-painike ei-aktiiviseen tilaan (ei voi painaa)
 function answer(event){
-    // Estetään lähetä-painikkeen normaali toiminto, eli lomakkeen lähettäminen
-    event.preventDefault();
-
-    //Asetetaan vastaa-painike ei-aktiiviseen tilaan (ei voi painaa)
+    event.preventDefault();  
     document.querySelector('#answer').disabled = true;
 
     let formData = new FormData(form);
     let selection = formData.get('selection');
 
-    //Tarkistetaan onko käyttäjän antama vastaus oikea. Jotta kirjaisimen koko ei vaikuttaisi virheellisesti vastauksen tulkintaan, muutetaan valittu vastaus ja tarkistusvastaus ISOIKSI kirjaimiksi. Vaihtoehtoisesti voisi käyttää myös toLowerCase()
+//Tarkistetaan onko käyttäjän antama vastaus oikea. 
+// Jos vastaus on oikein, pistepotti kasvaa yhdellä ja kysymyselementin luokkalistaan lisätään arvo 'correct' (oikein)
+// Muussa tapauksessa pistepotti pysyy ennallaan, kysymyselementin luokkalistaan lisätään 'incorrect' (väärin)
     
-    // Jos vastaus on oikein, pistepotti kasvaa yhdellä ja kysymyselementin luokkalistaan lisätään arvo 'correct' (oikein)
     if(selection.toUpperCase() == answers[index].toUpperCase()){
         points++;
         questionElement.classList.add('correct');
-    }else{
-        // Muussa tapauksessa pistepotti pysyy ennallaan, kysymyselementin luokkalistaan lisätään 'incorrect' (väärin)
+    }else{   
         questionElement.classList.add('incorrect');
     }
 
-    // Tuloselementin tekstisisältö päivitetään. Näytetään nykyinen pistesaldo.
+// Tuloselementin tekstisisältö päivitetään. Näytetään nykyinen pistesaldo.
+// Siirrytään seuraavaan kysymykseen, kasvatetaan indexiä yhdellä
+
     document.querySelector('#result').textContent = 
         'Sinulla on nyt ' + points + '/' + questions.length + ' pistettä';
 
     document.querySelector('#correctAnswer').textContent = 'Oikea vastaus on: ' + answers[index];
-
-    //Siirrytään seuraavaan kysymykseen, kasvatetaan indexiä yhdellä
     index++;
 
-    //4 sekunnin viive ennen seuraavaa kysymystä
-    setTimeout(nextQuestion, 4000);
+//3 sekunnin viive ennen seuraavaa kysymystä
+    setTimeout(nextQuestion, 3000);
 }
 
 
-//Asetetaan uusi kysymys näkyviin
-function nextQuestion(){
-    // Tyhjennetään vastausvaihtoehdot, jotta ne voidaan päivittää uuden kysymyksen mukaisiksi
-    optionsDiv.innerHTML = "";
-    // Tyhjennetään edellisen kysymyksen oikea vastaus
-    document.querySelector('#correctAnswer').textContent = '';
+// Asetetaan uusi kysymys näkyviin
+// Tyhjennetään vastausvaihtoehdot, jotta ne voidaan päivittää uuden kysymyksen mukaisiksi
+// Tyhjennetään edellisen kysymyksen oikea vastaus
+// Jos index on suurempi tai yhtä suuri kuin kysymysten määrä, kysely on päättynyt, muutoin siirrytään seuraavaan kysymykseen, index on kasvanut yhdellä.
 
-    // Jos index on suurempi tai yhtä suuri kuin kysymysten määrä, kysely on päättynyt
+function nextQuestion(){ 
+    optionsDiv.innerHTML = "";    
+    document.querySelector('#correctAnswer').textContent = '';
+    
     if(index >= questions.length){
         document.querySelector('#result').textContent = 
             'Peli loppui ja sait yhteensä ' + points + '/' + questions.length + ' pistettä';
         form.classList.add('hidden');
-        document.querySelector('#questionImage').src = "./images/planeetat.jpg";
+        document.querySelector('#questionImage').src = "./images/aurinkokunta.jpg";
         sessionStorage.setItem('Planeettavisailu', points)
     }else{
-        // Siirrytään seuraavaan kysymykseen, index on kasvanut yhdellä.
         questionElement.textContent = questions[index];
 
-        // Käydään läpi options -taulukon kysymystä vastaavan indeksin sisällä olevassa taulukossa olevat vastausvaihtoehdot
-        for (let o = 0; o < options[index].length; o++) {
-            // Syötetään HTML-koodi valintaruudulle ja sen labelille lomakkeen sisällä olevaan valintavaihtoehtojen diviin.
+// Käydään läpi options -taulukon kysymystä vastaavan indeksin sisällä olevassa taulukossa olevat vastausvaihtoehdot
+// Syötetään HTML-koodi valintaruudulle ja sen labelille lomakkeen sisällä olevaan valintavaihtoehtojen diviin.
+
+        for (let o = 0; o < options[index].length; o++) {    
             optionsDiv.insertAdjacentHTML("afterBegin", '<input type="checkbox" name="selection" id="' + options[index][o] + '" value="' + options[index][o] + '"><label for="' + options[index][o] + '">' + options[index][o] + '</label> <br>');
         }
 
-        // Kysymykseen liittyvän kuvan näyttäminen
+// Kysymykseen liittyvän kuvan näyttäminen
+// Poistetaan kysymyksestä luokkamäärite onko vastaus ollut oikein vai väärin
+// Vaihdetaan vastaus-painikke aktiiviseksi
         document.querySelector('#questionImage').src = images[index];
         
-        // Poistetaan kysymyksestä luokkamäärite onko vastaus ollut oikein vai väärin
         questionElement.classList.remove('correct', 'incorrect');
-        // Vaihdetaan vastaus-painikke aktiiviseksi
+        
         document.querySelector('#answer').disabled = false;
     }
     
 } 
+
+//Koodipohjan lähteenä käytetty opettajan materiaalia "Visailuesimerkki".
 
