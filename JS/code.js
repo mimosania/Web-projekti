@@ -9,3 +9,7 @@ tahtikuvio.innerHTML = palapeli + "/3";
 const matematiikka = document.querySelector('#matematiikka');
 let matikkapeli = Number(sessionStorage.getItem('matikkapeli'));
 matematiikka.innerHTML = matikkapeli;
+
+const asteroidit = document.querySelector('#asteroidit');
+let finalScore = Number(sessionStorage.getItem('finalScore'));
+asteroidit.innerHTML = finalScore;
