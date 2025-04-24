@@ -17,3 +17,7 @@ asteroidit.innerHTML = finalScore;
 const muisti = document.querySelector('#muisti');
 let muistipeli = Number(sessionStorage.getItem('muistipeli'));
 muisti.innerHTML = muistipeli;
+
+const planeetat = document.querySelector('#planeetat');
+let planeettapeli = Number(sessionStorage.getItem('planeettapeli'));
+planeetat.innerHTML = planeettapeli;
