@@ -27,13 +27,12 @@ function flipkortti() {
     }
     function tarkistus(){
         if (eka.dataset.framework === 
-            toka.dataset.framework) {
-                poispaalta();
+            toka.dataset.framework) {  
                 pisteet++;
                 document.querySelector(".pisteet").textContent = pisteet;
                 lockBoard = true;
                 sessionStorage.setItem('muistipeli', pisteet.toString());
-
+                poispaalta();
         } else {
             takaisin();
 
