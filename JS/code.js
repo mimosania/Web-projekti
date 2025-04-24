@@ -21,3 +21,13 @@ muisti.innerHTML = muistipeli;
 const planeetat = document.querySelector('#planeetat');
 let planeettapeli = Number(sessionStorage.getItem('planeettapeli'));
 planeetat.innerHTML = planeettapeli + "/8";
+
+function restart(){
+    sessionStorage.setItem('palapeli', 0)
+    sessionStorage.setItem('matikkapeli', 0)
+    sessionStorage.setItem('Planeettavisailu', 0)
+    sessionStorage.setItem('finalScore', 0)
+    sessionStorage.setItem('muistipeli', 0)
+    sessionStorage.setItem('planeettapeli', 0)
+    location.reload();
+}
