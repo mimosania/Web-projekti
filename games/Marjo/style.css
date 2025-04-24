@@ -18,16 +18,9 @@ form#questionform input[type="submit"] {
     margin: 1em 0;
 }
 
-#questionform {
+#frame {
     border: 1px solid plum;
     padding: 15px;
-    position: relative;
-}
-
-#answer {
-    position: absolute;
-    bottom: -140px;
-    
 }
 
 form {
@@ -39,9 +32,15 @@ form {
 }
 
 .incorrect {
-    background-color: rgb(234, 144, 144);
+    background-color: rgb(209, 41, 41);
 }
 
 .hidden {
     display: none;
+}
+
+.lastimage {
+    max-width: 30em !important;
+    width: 100% !important;
+    margin-top: 5em !important;
 }

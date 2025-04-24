@@ -7,6 +7,7 @@ let points = 0;
 
 //Haetaan lomake, vaihtoehdot sisältävä div lomakkeen sisällä, kysymyselementti ja asetetaan ensimmäinen kysymys
 let form = document.getElementById('questionform');
+const questionFrame = document.querySelector('#frame');
 const optionsDiv = document.querySelector('#questionOptions');
 form.addEventListener('submit', answer);
 
@@ -30,9 +31,9 @@ function answer(event){
     
     if(selection.toUpperCase() == answers[index].toUpperCase()){
         points++;
-        questionElement.classList.add('correct');
+        questionFrame.classList.add('correct');
     }else{   
-        questionElement.classList.add('incorrect');
+        questionFrame.classList.add('incorrect');
     }
 
 // Tuloselementin tekstisisältö päivitetään. Näytetään nykyinen pistesaldo.
@@ -55,6 +56,7 @@ function answer(event){
 // Jos index on suurempi tai yhtä suuri kuin kysymysten määrä, kysely on päättynyt, muutoin siirrytään seuraavaan kysymykseen, index on kasvanut yhdellä.
 
 function nextQuestion(){ 
+    questionFrame.removeAttribute('class','');
     optionsDiv.innerHTML = "";    
     document.querySelector('#correctAnswer').textContent = '';
     
@@ -63,6 +65,7 @@ function nextQuestion(){
             'Peli loppui ja sait yhteensä ' + points + '/' + questions.length + ' pistettä';
         form.classList.add('hidden');
         document.querySelector('#questionImage').src = "./images/aurinkokunta.jpg";
+        document.querySelector('#questionImage').classList.add('lastimage');
         sessionStorage.setItem('Planeettavisailu', points)
     }else{
         questionElement.textContent = questions[index];
