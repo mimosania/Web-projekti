@@ -13,3 +13,7 @@ matematiikka.innerHTML = matikkapeli;
 const asteroidit = document.querySelector('#asteroidit');
 let finalScore = Number(sessionStorage.getItem('finalScore'));
 asteroidit.innerHTML = finalScore;
+
+const muisti = document.querySelector('#muisti');
+let muistipeli = Number(sessionStorage.getItem('muistipeli'));
+muisti.innerHTML = muistipeli;
