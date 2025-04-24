@@ -1,9 +1,7 @@
 const visailu = document.querySelector('#visailu');
 let Planeettavisailu = Number(sessionStorage.getItem('Planeettavisailu'));
-visailu.innerHTML = Planeettavisailu;
+visailu.innerHTML = Planeettavisailu + "/8";
 
-let palapelipisteet = Number(sessionStorage.getItem('palapeli'));
-
-
-let pointElem = document.getElementById('points');
-pointElem.textContent = 'Palapelin pisteet: ' + palapelipisteet;
+const tahtikuvio = document.querySelector('#tahtikuvio');
+let palapeli = Number(sessionStorage.getItem('palapeli'));
+tahtikuvio.innerHTML = palapeli + "/3";
