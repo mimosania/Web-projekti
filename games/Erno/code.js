@@ -146,3 +146,4 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+//Assisted (heavily) by ChatGPT
